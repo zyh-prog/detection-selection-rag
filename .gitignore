@@ -1,0 +1,10 @@
+# caches and generated data are not distributed (134 GB); see README
+data/situatedqa/
+data/*.pkl
+data/*.tsv
+data/faiss_index*
+logs/
+__pycache__/
+*.pyc
+.env
+.DS_Store
