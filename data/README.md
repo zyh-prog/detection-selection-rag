@@ -4,8 +4,8 @@ SituatedQA (Zhang & Choi, EMNLP 2021) ships one row per *situated instance*: an 
 question, a disambiguated `edited_question` carrying a date or a location, and that
 situation's answer. Rows that share an `id` are situations of the same question.
 
-The paper groups those rows by `id` to recover multi-answer ground truth — a question counts
-as ambiguous when it has two or more distinct situations — and samples 500 questions with
+The paper groups those rows by `id` to recover multi-answer ground truth (a question counts
+as ambiguous when it has two or more distinct situations), then samples 500 questions with
 seed 42, split 100 dev / 400 test.
 
 ## Why this directory ships identifiers instead of the data
@@ -19,10 +19,10 @@ is shipped here is only what is ours:
 |---|---|
 | `id` | upstream identifier, prefixed `geo_` / `temp_` |
 | `source` | `geo` or `temp`, from the source file |
-| `split` | **ours** — dev / test assignment, seed 42 |
-| `is_ambiguous` | **ours** — derived, `>= 2` distinct situations |
-| `ambiguity_level` | **ours** — number of distinct situations |
-| `content_sha256_16` | **ours** — a fingerprint so you can verify your rebuild |
+| `split` | **ours**, dev / test assignment, seed 42 |
+| `is_ambiguous` | **ours**, derived: `>= 2` distinct situations |
+| `ambiguity_level` | **ours**, the number of distinct situations |
+| `content_sha256_16` | **ours**, a fingerprint so you can verify your rebuild |
 
 No question text, no interpretations, no answers.
 
@@ -47,7 +47,7 @@ json.dumps({"q": question, "i": ground_truth_intents, "a": ground_truth_answers}
 ```
 
 for that question. Recompute it over your rebuilt records and compare. If every fingerprint
-matches, your split is identical to the one used in the paper — verified without either of us
+matches, your split is identical to the one used in the paper, verified without either of us
 having to move the upstream text around.
 
 ## What the split should look like

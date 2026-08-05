@@ -3,7 +3,7 @@
 All four prompts used in the paper, verbatim. Every call runs at temperature 0.0 with one
 sample; the answer calls cap generation at 64 tokens and interpretation generation at 260.
 
-The source of truth is the code — `code/utils/answer_squeeze.py`,
+The source of truth is the code: `code/utils/answer_squeeze.py`,
 `code/utils/riv_features.py` and `code/verify_candidates.py`. This file is the same text
 laid out for reading.
 
@@ -128,7 +128,7 @@ Reply one token: VALID or INVALID.
 
 ## 4. NLI evidence grounding
 
-Not a prompt — a natural-language-inference classifier,
+Not a prompt, but a natural-language-inference classifier,
 `MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli`. For candidate answer `c` to question `q`,
 each retrieved passage is the premise and the hypothesis is
 

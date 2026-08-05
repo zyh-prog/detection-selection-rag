@@ -16,7 +16,7 @@ code/                           pipeline, reference systems, selectors, analysis
 
 ## What is *not* here, and why
 
-**The caches.** The paper's numbers are read off cached generations — retrieved passages,
+**The caches.** The paper's numbers are read off cached generations: retrieved passages,
 generated interpretations, and model answers for every question in every arm. That is 134 GB,
 so it is not distributed. Everything needed to regenerate it is here.
 
@@ -28,7 +28,7 @@ for the parameters actually used (top-8 of 16 reranked, `nprobe=32`).
 ours. Get them from their own releases; `data/README.md` explains how our SituatedQA split
 is rebuilt from the upstream files.
 
-## Reproduction — please read before comparing numbers
+## Reproduction: read this before comparing numbers
 
 **Regenerating from scratch will not reproduce the reported values to the decimal, and that is
 expected.** The pipeline calls an LLM at temperature 0.0, but greedy decoding is not
@@ -102,7 +102,7 @@ All confidence intervals are paired percentile bootstrap, 10,000 resamples, seed
 ## Licence
 
 The code in `code/` and the annotations in `data/` are released under the MIT licence (see
-`LICENSE`). This covers our own work only. The upstream datasets keep their own terms — see
+`LICENSE`). This covers our own work only. The upstream datasets keep their own terms; see
 `data/README.md`.
 
 ## Contact
