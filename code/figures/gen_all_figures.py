@@ -177,7 +177,7 @@ def fig_architecture():
             style="italic", ha="center")
     box(68, 11.5, 28, 6, "Self-verifier", "(prompt)", fc="#D6E9E2", ec=TEAL, fs=7, sfs=5.6, bold=True)
     box(68, 4.3, 28, 6, "NLI grounding", "(entailment)", fc="#C9E3D9", ec=TEAL_D, fs=7, sfs=5.6, bold=True)
-    ax.text(83, 2.5, "deployable selectors (no gold info)", fontsize=6.8,
+    ax.text(83, 2.5, "deployable selectors (no gold info)", fontsize=6.0,
             color="#2f6f5e", style="italic", ha="center")
 
     # auto-fit: shrink any label that exceeds its allotted box area
@@ -234,10 +234,13 @@ def fig2_scale_ladder():
     ax.plot(x, perf_sel, marker="^", label="Perfect selection", color=ORANGE)
     ax.set_ylabel("F1"); ax.set_xticks(x); ax.set_xticklabels(models); ax.set_ylim(35, 72)
     ax.tick_params(axis="x", labelsize=7.5); ax.tick_params(axis="y", labelsize=8)
-    # outside the axes, as in fig1: the "perfect selection" trace runs through the
-    # upper-left corner where an inset legend would sit
-    ax.legend(ncol=3, fontsize=7.5, loc="lower left", bbox_to_anchor=(0, 1.0, 1, 0.14),
-              mode="expand", borderaxespad=0)
+    # Outside the axes, because the "perfect selection" trace runs through the
+    # upper-left corner where an inset legend would sit. Three entries share a
+    # 3.6in strip, so mode="expand" stretches them until the markers land on the
+    # neighbouring label; fixed spacing and short handles keep them apart instead.
+    ax.legend(ncol=3, fontsize=7, loc="lower left", bbox_to_anchor=(0, 1.0),
+              borderaxespad=0, handlelength=1.4, handletextpad=0.4,
+              columnspacing=1.0)
     save("fig2_scale_ladder")
 
 
