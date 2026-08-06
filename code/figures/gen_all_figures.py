@@ -23,6 +23,9 @@ plt.rcParams.update({
     "font.size": 10, "axes.titlesize": 11, "axes.titleweight": "bold",
     "axes.labelsize": 10, "legend.fontsize": 8.5, "legend.frameon": False,
     "figure.dpi": 300, "savefig.dpi": 300, "savefig.bbox": "tight",
+    # Springer accepts only Type 1 or embedded TrueType fonts in a camera-ready PDF.
+    # matplotlib defaults to pdf.fonttype 3, which produces Type 3 fonts; 42 is TrueType.
+    "pdf.fonttype": 42, "ps.fonttype": 42,
     "axes.spines.top": False, "axes.spines.right": False,
     "axes.grid": True, "grid.alpha": 0.15, "lines.linewidth": 1.8, "lines.markersize": 5,
 })
